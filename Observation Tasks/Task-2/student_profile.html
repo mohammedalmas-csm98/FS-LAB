@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #profile {
+            background-color: white;
+            width: 350px;
+            margin: 25px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            text-align: left;
+        }
+
+        #profile h2 {
+            text-align: center;
+            color: blue;
+        }
+
+        #profile p {
+            font-size: 16px;
+            margin: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Profile</h1>
+
+    <input type="text" id="name" placeholder="Enter Name"><br>
+    <input type="text" id="roll" placeholder="Enter Roll Number"><br>
+    <input type="text" id="dept" placeholder="Enter Department"><br>
+    <input type="text" id="cgpa" placeholder="Enter CGPA"><br>
+
+    <button onclick="createProfile()">Create Profile</button>
+
+    <div id="profile"></div>
+
+    <script>
+
+        // Student Class
+        class Student {
+            constructor(name, roll, department, cgpa) {
+                this.name = name;
+                this.roll = roll;
+                this.department = department;
+                this.cgpa = cgpa;
+            }
+        }
+
+        // Function to create student profile
+        function createProfile() {
+
+            // Get values from input fields
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+            let dept = document.getElementById("dept").value;
+            let cgpa = document.getElementById("cgpa").value;
+
+            // Create Student object
+            let student = new Student(name, roll, dept, cgpa);
+
+            // Select profile div
+            let profile = document.getElementById("profile");
+
+            // Clear previous profile
+            profile.innerHTML = "";
+
+            // Create elements dynamically
+            let heading = document.createElement("h2");
+            heading.textContent = "Student Profile";
+
+            let namePara = document.createElement("p");
+            namePara.textContent = "Name       : " + student.name;
+
+            let rollPara = document.createElement("p");
+            rollPara.textContent = "Roll No    : " + student.roll;
+
+            let deptPara = document.createElement("p");
+            deptPara.textContent = "Department : " + student.department;
+
+            let cgpaPara = document.createElement("p");
+            cgpaPara.textContent = "CGPA       : " + student.cgpa;
+
+            // Add elements to webpage
+            profile.appendChild(heading);
+            profile.appendChild(namePara);
+            profile.appendChild(rollPara);
+            profile.appendChild(deptPara);
+            profile.appendChild(cgpaPara);
+        }
+
+    </script>
+
+</body>
+</html>
