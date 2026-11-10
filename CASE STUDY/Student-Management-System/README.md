@@ -8,11 +8,11 @@ A full-stack web application designed to manage student information through a ce
 
 The system allows users to manage student records efficiently through a React frontend, a Node.js and Express backend, and a MongoDB database.
 
-The application supports student registration, record retrieval, profile viewing, updating, deletion, searching, and filtering.
+The application supports student registration, record retrieval, profile viewing, updating, deletion, searching and filtering.
 
 ## Live Deployment
 
-The application is deployed using Vercel, Render, and MongoDB Atlas.
+The application is deployed using Vercel, Render and MongoDB Atlas.
 
 | Component | Platform | URL |
 |---|---|---|
@@ -74,17 +74,13 @@ The application is deployed using Vercel, Render, and MongoDB Atlas.
 
 ### 4. Student Information
 
-The application supports the following student details:
+The core student information managed by the application includes:
 
-- Full name
+- Student name
 - Roll number
 - Email address
 - Department
 - Academic year
-- Phone number
-- Date of birth
-- Gender
-- Address
 
 ### 5. Data Validation
 - Student information validation.
@@ -134,17 +130,15 @@ Each student is stored as a MongoDB document.
 | Field | Description |
 |---|---|
 | _id | MongoDB document identifier |
-| rollNumber | Student roll number |
 | name | Student full name |
+| rollNumber | Student roll number |
 | email | Student email |
 | department | Academic department |
 | year | Academic year |
-| phone | Contact number |
-| dateOfBirth | Date of birth |
-| gender | Gender |
-| address | Residential address |
 | createdAt | Record creation timestamp |
 | updatedAt | Last update timestamp |
+
+The `createdAt` and `updatedAt` fields are maintained through Mongoose timestamps, as observed in the stored document.
 
 ## REST API Endpoints
 
@@ -177,7 +171,7 @@ git clone https://github.com/mohammedalmas-csm98/FS-LAB.git
 Navigate to the project directory:
 
 ```bash
-cd FS-LAB/CASE\ STUDY/Student-Management-System
+cd "FS-LAB/CASE STUDY/Student-Management-System"
 ```
 
 ### 2. Configure the Backend
@@ -211,7 +205,7 @@ http://localhost:5000
 Open another terminal:
 
 ```bash
-cd frontend
+cd "FS-LAB/CASE STUDY/Student-Management-System/frontend"
 npm install
 ```
 
@@ -247,7 +241,7 @@ For production deployment, the frontend uses:
 VITE_API_URL=https://studia-backend-orll.onrender.com/api
 ```
 
-**Security:** Never commit `.env` files, database credentials, or private connection strings to GitHub. Configure production secrets through the hosting platform's environment-variable settings.
+**Security:** Never commit `.env` files, database credentials or private connection strings to GitHub. Configure production secrets through the hosting platform's environment-variable settings.
 
 ## Case Study: Debugging Student Records Not Displaying After Updates
 
@@ -278,7 +272,7 @@ A deployed Student Management System successfully adds student records but fails
 8. Verify the API base URL and environment variables.
 9. Reload the application and confirm that the updated record remains visible.
 
-This procedure helps identify whether the problem originates in the frontend, backend, database, or deployment configuration.
+This procedure helps identify whether the problem originates in the frontend, backend, database or deployment configuration.
 
 *The above describes the case-study debugging scenario and possible causes; it does not imply that every listed issue occurred in the final deployed application.*
 
@@ -297,13 +291,11 @@ The application was tested for its main student-management workflows.
 | Duplicate roll number | Duplicate record is rejected |
 | Database verification | Student document is visible in MongoDB Atlas |
 
-The deployed application was tested for add, edit, view, and delete operations.
+The deployed application was tested for add, edit, view and delete operations.
 
 ## Application Screenshots
 
-Project screenshots are maintained separately in the case-study folder.
-
-[View Application and Deployment Screenshots](../output_screenshots/)
+Screenshots of the application and deployment evidence are maintained separately in the project repository.
 
 The screenshots include:
 
@@ -344,7 +336,7 @@ The screenshots include:
 
 ## Future Enhancements
 
-- Role-based authentication for administrators, faculty, and students.
+- Role-based authentication for administrators, faculty and students.
 - Pagination for large student datasets.
 - Student attendance management.
 - Export student records to PDF and Excel.
@@ -354,11 +346,11 @@ The screenshots include:
 
 ## Conclusion
 
-STUDIA demonstrates the development and deployment of a full-stack Student Management System using React, Node.js, Express.js, and MongoDB.
+STUDIA demonstrates the development and deployment of a full-stack Student Management System using React, Node.js, Express.js and MongoDB.
 
 The application provides essential student-management functionality through a user-friendly interface and a cloud-hosted backend connected to MongoDB Atlas.
 
-The project also demonstrates REST API development, database integration, CRUD operations, debugging methodology, environment-variable configuration, and cloud deployment using Vercel and Render.
+The project also demonstrates REST API development, database integration, CRUD operations, debugging methodology, environment-variable configuration and cloud deployment using Vercel and Render.
 
 ---
 
