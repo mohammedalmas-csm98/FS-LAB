@@ -1,6 +1,14 @@
-# Student Management System
+# Student Management System – STUDIA
 
 A full-stack web application designed to manage student records efficiently. The system allows users to add, view, update, search, filter and delete student information through an interactive dashboard.
+
+## Live Deployment
+
+- **Frontend (Vercel):** https://studia-frontend.vercel.app
+- **Backend (Render):** https://studia-backend-orll.onrender.com
+- **Source Code (GitHub):** https://github.com/mohammedalmas-csm98/FS-LAB
+
+**Database:** MongoDB Atlas
 
 ## Project Overview
 
@@ -28,6 +36,7 @@ This project implements CRUD operations and integrates the frontend with a backe
 | Database | MongoDB Atlas |
 | API Communication | Axios, REST API |
 | Development Tools | VS Code, Postman, Git, GitHub |
+| Deployment | Vercel, Render |
 
 ## Features
 
@@ -113,7 +122,7 @@ Start the backend:
 npm run dev
 ```
 
-The backend runs at:
+The backend runs locally at:
 
 `http://localhost:5000`
 
@@ -127,13 +136,21 @@ npm install
 npm run dev
 ```
 
+Set the frontend API environment variable when running against the deployed backend:
+
+```env
+VITE_API_URL=https://studia-backend-orll.onrender.com/api
+```
+
 Open the local URL displayed by Vite, usually:
 
 `http://localhost:5173`
 
 ## API Endpoints
 
-Base URL: `http://localhost:5000/api/students`
+Local base URL: `http://localhost:5000/api/students`
+
+Production base URL: `https://studia-backend-orll.onrender.com/api/students`
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -156,11 +173,14 @@ The following operations were tested:
 
 Postman was used to verify backend API operations, and the application was tested through the browser.
 
+The deployed application was also tested to verify frontend-backend communication and CRUD functionality.
+
 ## Case Study: Problem and Resolution
 
 **Problem:** The application successfully added student records, but updated records were not consistently reflected in the user interface.
 
 **Possible causes investigated:**
+
 - Database update operation.
 - Backend API response.
 - Frontend API request.
@@ -171,11 +191,17 @@ Postman was used to verify backend API operations, and the application was teste
 
 ## Deployment
 
-- Frontend: To be deployed on Vercel.
-- Backend: To be deployed on Render.
-- Database: MongoDB Atlas.
+The application is deployed using the following services:
 
-Deployment URLs will be added after deployment.
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+
+### Live Application Links
+
+- Frontend: https://studia-frontend.vercel.app
+- Backend: https://studia-backend-orll.onrender.com
+- GitHub Repository: https://github.com/mohammedalmas-csm98/FS-LAB
 
 ## Author
 
